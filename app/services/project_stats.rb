@@ -7,6 +7,9 @@ class ProjectStats
   PERIODS = [ 7, 30, 90 ].freeze
   DEFAULT_PERIOD = 30
 
+  # The day a row falls on, to group the charts by.
+  DAY_OF = { started_at: Arel.sql("DATE(started_at)"), occurred_at: Arel.sql("DATE(occurred_at)") }.freeze
+
   # Anything past this many distinct groups is folded into "Other".
   DISTRIBUTION_LIMITS = { os: 6, ram: 6, gpu: 8 }.freeze
 
@@ -170,7 +173,7 @@ class ProjectStats
   end
 
   def day_of(column)
-    Arel.sql("DATE(#{column})")
+    DAY_OF.fetch(column)
   end
 
   # The biggest groups, most users first, with the long tail folded into "Other".

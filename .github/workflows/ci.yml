@@ -75,6 +75,12 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
+      - name: Check the generated TypeScript route helpers are up to date
+        run: >
+          bin/rails typelizer:generate:refresh &&
+          git diff --exit-code -- app/javascript/routes &&
+          test -z "$(git ls-files --others --exclude-standard -- app/javascript/routes)"
+
   test:
     runs-on: ubuntu-latest
 

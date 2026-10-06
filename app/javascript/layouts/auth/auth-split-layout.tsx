@@ -22,17 +22,18 @@ export default function AuthSplitLayout({
           href={home.index()}
           className="relative z-20 flex items-center text-lg font-medium"
         >
-          <AppLogoIcon className="mr-2 size-8 fill-current text-white" />
-          {import.meta.env.VITE_APP_NAME ?? "React Starter Kit"}
+          <AppLogoIcon className="mr-2 size-8 text-white" />
+          {import.meta.env.VITE_APP_NAME ?? "mini-apm"}
         </Link>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
-              &ldquo;The One Person Framework. A toolkit so powerful that it
-              allows a single individual to create modern applications upon
-              which they might build a competitive business.&rdquo;
+              Know which version of your app started crashing more than the one
+              before it.
             </p>
-            <footer className="text-sm text-neutral-300">DHH</footer>
+            <footer className="text-sm text-neutral-300">
+              An open source application performance monitor
+            </footer>
           </blockquote>
         </div>
       </div>
@@ -42,7 +43,7 @@ export default function AuthSplitLayout({
             href={home.index()}
             className="relative z-20 flex items-center justify-center lg:hidden"
           >
-            <AppLogoIcon className="h-10 fill-current text-black sm:h-12" />
+            <AppLogoIcon className="h-10 text-black sm:h-12" />
           </Link>
           <div className="flex flex-col items-start gap-2 text-left sm:items-center sm:text-center">
             <h1 className="text-xl font-medium">{title}</h1>

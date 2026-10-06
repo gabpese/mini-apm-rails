@@ -3,7 +3,7 @@ import { createInertiaApp } from "@inertiajs/react"
 import { initializeTheme } from "@/hooks/use-appearance"
 import PersistentLayout from "@/layouts/persistent-layout"
 
-const appName = import.meta.env.VITE_APP_NAME ?? "React Starter Kit"
+const appName = import.meta.env.VITE_APP_NAME ?? "mini-apm"
 
 void createInertiaApp({
   title: (title) => (title ? `${title} - ${appName}` : appName),

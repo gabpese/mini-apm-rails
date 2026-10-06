@@ -1,5 +1,5 @@
 import { Link } from "@inertiajs/react"
-import { BookOpen, Folder, FolderKanban } from "lucide-react"
+import { FolderKanban } from "lucide-react"
 
 import { NavFooter } from "@/components/nav-footer"
 import { NavMain } from "@/components/nav-main"
@@ -13,6 +13,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { externalNavItems } from "@/lib/external-links"
 import { dashboard } from "@/routes"
 import type { NavItem } from "@/types"
 
@@ -24,19 +25,6 @@ const mainNavItems: NavItem[] = [
     href: dashboard.index().url,
     icon: FolderKanban,
     activePrefixes: ["/projects"],
-  },
-]
-
-const footerNavItems: NavItem[] = [
-  {
-    title: "Repository",
-    href: "https://github.com/inertia-rails/react-starter-kit",
-    icon: Folder,
-  },
-  {
-    title: "Documentation",
-    href: "https://inertia-rails.dev",
-    icon: BookOpen,
   },
 ]
 
@@ -60,7 +48,7 @@ export function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter>
-        <NavFooter items={footerNavItems} className="mt-auto" />
+        <NavFooter items={externalNavItems} className="mt-auto" />
         <NavUser />
       </SidebarFooter>
     </Sidebar>

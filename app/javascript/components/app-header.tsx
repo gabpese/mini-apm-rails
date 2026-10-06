@@ -1,5 +1,5 @@
 import { Link, usePage } from "@inertiajs/react"
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from "lucide-react"
+import { FolderKanban, Menu, Search } from "lucide-react"
 
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Icon } from "@/components/icon"
@@ -31,6 +31,7 @@ import {
 } from "@/components/ui/tooltip"
 import { UserMenuContent } from "@/components/user-menu-content"
 import { useInitials } from "@/hooks/use-initials"
+import { externalNavItems } from "@/lib/external-links"
 import { cn } from "@/lib/utils"
 import { dashboard } from "@/routes"
 import type { BreadcrumbItem, NavItem } from "@/types"
@@ -40,24 +41,13 @@ import AppLogoIcon from "./app-logo-icon"
 
 const mainNavItems: NavItem[] = [
   {
-    title: "Dashboard",
+    title: "Projects",
     href: dashboard.index().url,
-    icon: LayoutGrid,
+    icon: FolderKanban,
   },
 ]
 
-const rightNavItems: NavItem[] = [
-  {
-    title: "Repository",
-    href: "https://github.com/inertia-rails/react-starter-kit",
-    icon: Folder,
-  },
-  {
-    title: "Documentation",
-    href: "https://inertia-rails.dev",
-    icon: BookOpen,
-  },
-]
+const rightNavItems = externalNavItems
 
 const activeItemStyles =
   "text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100"
@@ -92,7 +82,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
               >
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <SheetHeader className="flex justify-start text-left">
-                  <AppLogoIcon className="h-6 w-6 fill-current text-black dark:text-white" />
+                  <AppLogoIcon className="h-6 w-6 text-black dark:text-white" />
                 </SheetHeader>
                 <div className="flex h-full flex-1 flex-col space-y-4 p-4">
                   <div className="flex h-full flex-col justify-between text-sm">

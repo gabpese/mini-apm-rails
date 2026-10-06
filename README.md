@@ -180,6 +180,8 @@ The sessions table is `app_sessions` (and the model `AppSession`) because `Sessi
 
 [mini-apm-laravel](https://github.com/gabpese/mini-apm-laravel) and this repository are the same product built twice, to compare how each framework solves the same problem. They accept the same batches and answer the same status codes. Where behaviour was in question, the Laravel tests were the reference.
 
+The batch format is written down once, in [`events.schema.json`](events.schema.json). The same file lives in both repositories, and [`events_contract_spec.rb`](spec/requests/api/v1/events_contract_spec.rb) runs a list of 21 valid and invalid batches against the schema and against this API: both must give the same verdict. The Laravel repository runs the same cases.
+
 | Piece                  | Laravel                        | Rails                                            |
 | ---------------------- | ------------------------------ | ------------------------------------------------ |
 | Database access        | Eloquent                       | Active Record                                    |

@@ -180,6 +180,8 @@ A tabela de sessões se chama `app_sessions` (e o model `AppSession`) porque `Se
 
 O [mini-apm-laravel](https://github.com/gabpese/mini-apm-laravel) e este repositório são o mesmo produto construído duas vezes, para comparar como cada framework resolve o mesmo problema. Os dois aceitam os mesmos lotes e respondem os mesmos códigos de status. Onde havia dúvida de comportamento, os testes do Laravel foram a referência.
 
+O formato do lote está escrito uma só vez, no [`events.schema.json`](events.schema.json). O mesmo arquivo existe nos dois repositórios, e o [`events_contract_spec.rb`](spec/requests/api/v1/events_contract_spec.rb) roda uma lista de 21 lotes válidos e inválidos contra o schema e contra esta API: os dois precisam dar o mesmo veredito. O repositório Laravel roda os mesmos casos.
+
 | Peça                       | Laravel                        | Rails                                            |
 | -------------------------- | ------------------------------ | ------------------------------------------------ |
 | Acesso ao banco            | Eloquent                       | Active Record                                    |

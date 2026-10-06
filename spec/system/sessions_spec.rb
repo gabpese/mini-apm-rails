@@ -13,6 +13,6 @@ RSpec.describe "Sessions", type: :system do
     click_on "Log in"
 
     expect(page).to have_current_path(dashboard_path)
-    expect(page).to have_text("Dashboard")
+    expect(page).to have_text("No projects yet")
   end
 end

@@ -1,5 +1,9 @@
 import type { LucideIcon } from "lucide-react"
 
+import type { NewKey } from "./projects"
+
+export * from "./projects"
+
 export interface Auth {
   user: User
   session: Pick<Session, "id">
@@ -15,11 +19,14 @@ export interface NavItem {
   href: string
   icon?: LucideIcon | null
   isActive?: boolean
+  /** Other paths that also mark this item as active. */
+  activePrefixes?: string[]
 }
 
 export interface FlashData {
   alert?: string
   notice?: string
+  new_key?: NewKey
 }
 
 export interface SharedProps {

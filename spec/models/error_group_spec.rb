@@ -22,6 +22,28 @@ RSpec.describe ErrorGroup do
     end
   end
 
+  describe ".record!" do
+    let(:project) { create(:project) }
+    let(:at) { Time.utc(2026, 10, 20, 12) }
+
+    it "opens the group on the first occurrence and reuses it after" do
+      first = described_class.record!(project, message: "Boom", stack: "app.rb:10", occurred_at: at)
+      second = described_class.record!(project, message: "Boom", stack: "app.rb:10\nmore.rb:2", occurred_at: at + 1.hour)
+
+      expect(second).to eq(first)
+      expect(first.reload).to have_attributes(occurrences: 2, first_seen_at: at, last_seen_at: at + 1.hour, message: "Boom")
+    end
+
+    it "keeps the groups of different projects apart" do
+      other = create(:project)
+
+      a = described_class.record!(project, message: "Boom", stack: nil, occurred_at: at)
+      b = described_class.record!(other, message: "Boom", stack: nil, occurred_at: at)
+
+      expect(a).not_to eq(b)
+    end
+  end
+
   describe "#record_occurrence!" do
     it "counts the occurrence and widens the seen window" do
       group = create(:error_group, first_seen_at: Time.utc(2026, 10, 20, 12), last_seen_at: Time.utc(2026, 10, 20, 12), occurrences: 1)

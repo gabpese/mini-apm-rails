@@ -1,5 +1,5 @@
 import { Link } from "@inertiajs/react"
-import { BookOpen, Folder, LayoutGrid } from "lucide-react"
+import { BookOpen, Folder, FolderKanban } from "lucide-react"
 
 import { NavFooter } from "@/components/nav-footer"
 import { NavMain } from "@/components/nav-main"
@@ -20,9 +20,10 @@ import AppLogo from "./app-logo"
 
 const mainNavItems: NavItem[] = [
   {
-    title: "Dashboard",
+    title: "Projects",
     href: dashboard.index().url,
-    icon: LayoutGrid,
+    icon: FolderKanban,
+    activePrefixes: ["/projects"],
   },
 ]
 

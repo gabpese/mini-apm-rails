@@ -19,7 +19,9 @@ export function NavMain({ items = [] }: { items: NavItem[] }) {
           <SidebarMenuItem key={item.title}>
             <SidebarMenuButton
               asChild
-              isActive={page.url.startsWith(item.href)}
+              isActive={[item.href, ...(item.activePrefixes ?? [])].some(
+                (prefix) => page.url.startsWith(prefix),
+              )}
               tooltip={{ children: item.title }}
             >
               <Link href={item.href} prefetch>

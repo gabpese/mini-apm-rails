@@ -34,6 +34,14 @@ class ProjectStats
     }
   end
 
+  # The small summary shown on the project list.
+  def summary
+    totals.slice(:sessions, :crashes, :crash_rate).merge(
+      latest_version: versions.last&.fetch(:version),
+      regression: latest_regression.present?
+    )
+  end
+
   # One row per day of the period, including days with no data.
   def daily
     sessions = project.app_sessions.where(started_at: since..).group(day_of(:started_at)).count

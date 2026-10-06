@@ -9,6 +9,7 @@ class ApiKey < ApplicationRecord
 
   belongs_to :project
 
+  validates :name, length: { maximum: 100 }
   validates :key_prefix, presence: true
   validates :key_hash, presence: true, uniqueness: true
 

@@ -24,6 +24,12 @@ Rails.application.routes.draw do
     inertia :appearance
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :events, only: :create
+    end
+  end
+
   root "home#index"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

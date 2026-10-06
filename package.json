@@ -22,7 +22,7 @@
     "@babel/core": "^7.29.7",
     "@eslint/js": "^9.39.5",
     "@inertiajs/core": "3.0",
-    "@inertiajs/vite": "3.0",
+    "@inertiajs/vite": "3.8",
     "@rolldown/plugin-babel": "^0.2.4",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/vite": "^4.3.3",

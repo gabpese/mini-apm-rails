@@ -1,0 +1,12 @@
+# Always use LF, also on Windows, so shell scripts (bin/*, Docker entrypoint) keep working in Linux containers.
+* text=auto eol=lf
+
+# See https://git-scm.com/docs/gitattributes for more about git attribute files.
+
+# Mark the database schema as having been generated.
+db/schema.rb linguist-generated
+
+# Mark any vendored files as having been vendored.
+vendor/* linguist-vendored
+config/credentials/*.yml.enc diff=rails_credentials
+config/credentials.yml.enc diff=rails_credentials

@@ -16,6 +16,12 @@ Rails.application.routes.draw do
 
   get :dashboard, to: "dashboard#index"
 
+  resources :projects, only: %i[show create edit update destroy] do
+    resources :errors, only: :index, module: :projects
+    resources :versions, only: :index, module: :projects
+    resources :api_keys, only: %i[create destroy], shallow: true
+  end
+
   namespace :settings do
     resource :profile, only: [ :show, :update ]
     resource :password, only: [ :show, :update ]

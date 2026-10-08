@@ -224,7 +224,7 @@ The [CI workflow](.github/workflows/ci.yml) runs the same checks on every push.
 
 ## Deploy
 
-There is no hosted demo. The repository is a showcase to read and run locally. Rails generated a production [`Dockerfile`](Dockerfile) and a [Kamal](https://kamal-deploy.org) setup, which have not been tried here.
+This build has no hosted demo, but the same product runs live in its Laravel twin: [mini-apm.onrender.com](https://mini-apm.onrender.com) (`demo@mini-apm.example` / `demo-mini-apm-2026`). This repository is a showcase to read and run locally. Rails generated a production [`Dockerfile`](Dockerfile) and a [Kamal](https://kamal-deploy.org) setup, which have not been tried here.
 
 ## Roadmap
 

@@ -224,7 +224,7 @@ O [workflow de CI](.github/workflows/ci.yml) roda as mesmas verificações a cad
 
 ## Deploy
 
-Não há demonstração hospedada. O repositório é uma vitrine para ler e rodar localmente. O Rails gerou um [`Dockerfile`](Dockerfile) de produção e uma configuração do [Kamal](https://kamal-deploy.org), que não foram testados aqui.
+Esta versão não tem demonstração hospedada, mas o mesmo produto roda online na versão Laravel: [mini-apm.onrender.com](https://mini-apm.onrender.com) (`demo@mini-apm.example` / `demo-mini-apm-2026`). Este repositório é uma vitrine para ler e rodar localmente. O Rails gerou um [`Dockerfile`](Dockerfile) de produção e uma configuração do [Kamal](https://kamal-deploy.org), que não foram testados aqui.
 
 ## Roteiro
 

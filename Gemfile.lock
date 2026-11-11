@@ -203,9 +203,9 @@ GEM
       net-protocol
     net-ssh (7.3.6)
     nio4r (2.7.5)
-    nokogiri (1.19.4-x64-mingw-ucrt)
+    nokogiri (1.19.5-x64-mingw-ucrt)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-linux-gnu)
+    nokogiri (1.19.5-x86_64-linux-gnu)
       racc (~> 1.4)
     ostruct (0.6.3)
     parallel (2.3.0)
@@ -502,8 +502,8 @@ CHECKSUMS
   net-smtp (0.5.2) sha256=35103cc04d6b2d94632f9928ede07483c24b70b9c0db1f231fea43909b678f3c
   net-ssh (7.3.6) sha256=3364dedce752b9f5221e12ae970880d871a8e733e4730e4b9bd89e0b6808ce4b
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
-  nokogiri (1.19.4-x64-mingw-ucrt) sha256=051da97b8eccfdb5444fed40246a35e10d7298b9efe759b4cd25455ea04c587e
-  nokogiri (1.19.4-x86_64-linux-gnu) sha256=379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a
+  nokogiri (1.19.5-x64-mingw-ucrt) sha256=3c8c00297e12d1c891bcb340209abee6358a67e28328bbc4f7ba1ec859d993b0
+  nokogiri (1.19.5-x86_64-linux-gnu) sha256=2a32516e91fd53aa32bb281a1edbbd1b9b8440a14f43b1f22035ca504ad46091
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   parallel (2.3.0) sha256=f75a3e904101ce6a1ccb6b8dc800cbafd42166d83330192438dcf29395167a6f
   parser (3.3.12.0) sha256=21a6d7f755d5a24dfbdc6e6b772e4e879a52e7631a88bc5a3a134606052c9828
